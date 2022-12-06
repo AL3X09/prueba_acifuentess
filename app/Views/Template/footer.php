@@ -1,5 +1,5 @@
         <!-- footer -->
-        <footer class="border-top footer text-muted bg-info">
+        <footer class="border-top footer text-muted bg-info mt-2">
         	<div class="container text-white">
         		<div class="row">
         			<div class="col-md-4 col-sm-12">
