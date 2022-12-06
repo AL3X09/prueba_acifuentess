@@ -29,12 +29,12 @@ class Ejercicio extends BaseController{
 
     public function ejercicio4(){
         echo view('template/header');
-		echo view('ejer5');
+		echo view('ejer4');
 		echo view('template/footer');
     }
     public function ejercicio5(){
         echo view('template/header');
-		echo view('ejer4');
+		echo view('ejer5');
 		echo view('template/footer');
     }
     

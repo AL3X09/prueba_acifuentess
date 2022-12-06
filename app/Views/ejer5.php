@@ -24,4 +24,4 @@
 
 	<!-- JS pagina 	-->
 	<script src="<?= base_url(); ?>/public/assets/js/plugin/jsgrid/jsgrid.js"></script>
-	<script src="<?= base_url(); ?>/public/assets/js/paginas/ejercicio1.js"></script>
+	<script src="<?= base_url(); ?>/public/assets/js/paginas/ejercicio5.js"></script>

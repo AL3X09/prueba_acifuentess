@@ -1,9 +1,5 @@
 //creado por Alex CS
 $(document).ready(function () {
-  nuemeros = Math.floor(Math.random() * 100)
-
-  
-  $("#numeros").val(nuemeros)
   
 });
 
@@ -26,7 +22,7 @@ function ejercicio5() {
             var d = $.Deferred();
  
             $.ajax({
-              url:  "https://www.banxico.org.mx/SieAPIRest/service/v1/series/SP74665,SF61745,SF60634,SF43773/datos/oportuno?token=6e3bd0938be9fff6e4f4811b7b413d111f96a8c9a0ae60abef4029b681e9b8a9",
+              url:  "https://www.banxico.org.mx/SieAPIRest/service/v1/series/SP74665,SF61745,SF60634,SF43773/datos/2022-01-01/2022-01-06?token=6e3bd0938be9fff6e4f4811b7b413d111f96a8c9a0ae60abef4029b681e9b8a9",
               dataType: "json"
             }).done(function(response) {
                 d.resolve(response.series);
