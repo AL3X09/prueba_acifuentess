@@ -112,5 +112,58 @@ class Prueba extends ResourceController
         }
     }
 
+    public function E4()
+    {
+        try {
+            int $i = 0;
+            if (!empty($_POST['G1']) && !empty($_POST['G2']) ) {
+                $A = [$_POST['G1']];
+                $B = [$_POST['G2']];
+                $AUB = array();
+                $AnB = array();
+                $AVB = array();
+                $A_B = array();
+
+                print_r(strlen($arreglo));
+                
+                for( $i  ; $i < count($arreglo), $i++ ){
+
+                    array_push($newpila, $arreglo[$i]);
+
+                    if($i>0){
+
+                        if($arreglo[$i] < $newpila[$i-1] < ){
+                            array_pop($newpila, $arreglo[$i]);
+                        }else{
+                            array_push($newpila, $arreglo[$i]);
+                        }
+
+                    }
+                }
+                
+                foreach ($newpila as $clave => $valor) {
+                        echo "{$clave} => {$valor} ";
+                }                   
+                        $response = [
+                            'status' => 201,
+                            "error" => FALSE,
+                            "messages" => "Union: "+$AUB+" Intersección: "+$AnB+" Diferencia: "+$AVB+" Diferencia Simetrica: "+$A_B,
+                        ];
+                }
+
+            } else {
+                $response = [
+                    'status' => 400,
+                    "error" => TRUE,
+                    'messages' => 'Error, Debe ingresar todos los conjuntos de datos a comparar',
+                ];
+            }
+
+            return $this->respond($response);
+        } catch (\Exception $e) {
+            return $this->failServerError('se ha presntado una exepción ' . $e->getMessage());
+        }
+    }
+
     
 }
