@@ -1,15 +1,18 @@
 //creado por Alex CS
 $(document).ready(function () {
+  nuemeros = Math.floor(Math.random() * 100)
+
   
+  $("#numeros").val(nuemeros)
   
 });
 
-function ejercicio1() {
+function ejercicio3() {
 
   $.ajax({
-    url: base_url + '/api/prueba/e1',
+    url: base_url + '/api/prueba/e3',
     method: 'POST',
-    data: $("#fbisiesto").serialize(),
+    data: $("#farreglo").serialize(),
     beforeSend: function () {
     },
     success: function (data) {
@@ -28,4 +31,5 @@ function ejercicio1() {
     }
 
   });
+  
 }

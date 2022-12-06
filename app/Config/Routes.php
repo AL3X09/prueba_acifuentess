@@ -55,11 +55,9 @@ $routes->get("/Ejer5", "Ejercicio::ejercicio5");
  //grupo para procesos de las HSO
 $routes->group("api/prueba", function ($routes) {
 
-    //$routes->get("alldata", "Hso::getallHso");
     $routes->post("e1", "Prueba::E1");
-    /*$routes->post("crear", "Prueba::_2");
-    $routes->post("editar", "Prueba::_3");
-    $routes->post("eliminar", "Prueba::_4");*/
+    $routes->post("e3", "Prueba::E3");
+    $routes->post("e4", "Prueba::E4");
     
 });
 
