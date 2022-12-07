@@ -12,11 +12,13 @@
 
 			<div class="col-md-4">
 				<form id="farreglo" method="post">
-					<label class="form-label">Generando arreglo de numeros haleatorios hasta el 100</label>
-					<textarea id="numeros" name="numeros" class="form-control" aria-describedby="anioHelpInline" required="true" rows="20" cols="2">
+					<label class="form-label">Generando arreglo de numeros aleatorios hasta el 100</label>
+					<textarea id="numeros" name="numeros[]" class="form-control" aria-describedby="anioHelpInline" required="true" rows="5" cols="2"></textarea>
 				</form>
 
 				<button class="btn btn-primary mt-2" onclick="ejercicio3()">Enviar</button>
+				<br/>
+				<a href="<?= base_url(); ?>" class="btn btn-primary mt-2">Volver</a>
 			</div>
 
 		</div>

@@ -67,36 +67,33 @@ class Prueba extends ResourceController
     public function E3()
     {
         try {
-            int $i = 0;
+            //$arreglo = array();
+            //$newpila = [];
             if (!empty($_POST['numeros'])) {
-                $arreglo = [$_POST['numeros']];
-                $newpila = array();
-                print_r(strlen($arreglo));
+                //array_push($arreglo,$_POST['numeros']);
+                $arreglo=$_POST['numeros'];
+                //print_r($arreglo);
+                $newdata = explode(",", $arreglo[0]);
+                //print_r($newdata);
+                //var_dump(count($arreglo));
                 
-                for( $i  ; $i < count($arreglo), $i++ ){
-
-                    array_push($newpila, $arreglo[$i]);
-
-                    if($i>0){
-
-                        if($arreglo[$i] < $newpila[$i-1] < ){
-                            array_pop($newpila, $arreglo[$i]);
-                        }else{
-                            array_push($newpila, $arreglo[$i]);
-                        }
-
+                for($j = 0; $j < 20; $j ++) {
+                    for($i = 0; $i < (20-1); $i ++){
+                
+                        if($newdata[$i] > $newdata[$i+1]) {
+                            $temp = $newdata[$i+1];
+                            $newdata[$i+1]=$newdata[$i];
+                            $newdata[$i]=$temp;
+                        }       
                     }
                 }
-                
-                foreach ($newpila as $clave => $valor) {
-                        echo "{$clave} => {$valor} ";
-                }                   
+
                         $response = [
                             'status' => 201,
                             "error" => FALSE,
-                            "messages" => "Datos ordenados"+$newpila,
+                            "messages" => "Los datos ordenados son: ",
+                            "data" => $newdata,
                         ];
-                }
 
             } else {
                 $response = [
@@ -105,7 +102,6 @@ class Prueba extends ResourceController
                     'messages' => 'Error, Debe ingresar datos a consultar',
                 ];
             }
-
             return $this->respond($response);
         } catch (\Exception $e) {
             return $this->failServerError('se ha presntado una exepción ' . $e->getMessage());
@@ -115,41 +111,45 @@ class Prueba extends ResourceController
     public function E4()
     {
         try {
-            int $i = 0;
-            if (!empty($_POST['G1']) && !empty($_POST['G2']) ) {
-                $A = [$_POST['G1']];
-                $B = [$_POST['G2']];
+            
+            $i = 0;
+            if (!empty($_POST['g1']) && !empty($_POST['g2']) ) {
+                $d1 = $_POST['g1'];
+                $d2 = $_POST['g2'];
+
+                $A = explode(",", $d1[0]);
+                $B = explode(",", $d2[0]);
+                array_pop($A);
+                array_pop($B);
+                //print_r($A);
                 $AUB = array();
-                $AnB = array();
+                //$AnB = array();
                 $AVB = array();
                 $A_B = array();
 
-                print_r(strlen($arreglo));
-                
-                for( $i  ; $i < count($arreglo), $i++ ){
+                //union
+                $AUB = array_merge($A, $B);
 
-                    array_push($newpila, $arreglo[$i]);
+                //intersección
+                $AnB = array_intersect($A, $B);
+                $AnB = array_values($AnB);
 
-                    if($i>0){
-
-                        if($arreglo[$i] < $newpila[$i-1] < ){
-                            array_pop($newpila, $arreglo[$i]);
-                        }else{
-                            array_push($newpila, $arreglo[$i]);
-                        }
-
-                    }
-                }
-                
-                foreach ($newpila as $clave => $valor) {
-                        echo "{$clave} => {$valor} ";
-                }                   
-                        $response = [
-                            'status' => 201,
-                            "error" => FALSE,
-                            "messages" => "Union: "+$AUB+" Intersección: "+$AnB+" Diferencia: "+$AVB+" Diferencia Simetrica: "+$A_B,
-                        ];
-                }
+                //diferencia
+                $AVB = array_diff($A, $B);
+                $AVB = array_values($AVB);
+                                   
+                $response = [
+                    'status' => 201,
+                    "error" => FALSE,
+                    "data" =>[
+                        "message1" => "Union: ",
+                        "union" => $AUB,
+                        "message2" => "Intersección: ",
+                        "interseccion" => $AnB,
+                        "message3" => "Diferencia: ",
+                        "diferen" => $AVB,
+                    ]
+                ];
 
             } else {
                 $response = [
@@ -164,6 +164,5 @@ class Prueba extends ResourceController
             return $this->failServerError('se ha presntado una exepción ' . $e->getMessage());
         }
     }
-
     
 }

@@ -4,6 +4,8 @@
 			<div class="col-md-12">
 				<div class="text-center">
 					<h1 class="text-blue pb-2 fw-bold">EJERCICIO 5</h1>
+					<br/>
+					<a href="<?= base_url(); ?>" class="btn btn-primary mt-2">Volver</a>
 				</div>
 			</div>
 		</div>
@@ -12,7 +14,7 @@
 
 		<div class="col-md-12">
 
-			<table id="databanca">
+			<table id="tabla" class="table-primary">
 	
 			</table> 
 

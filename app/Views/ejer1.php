@@ -17,6 +17,8 @@
 				</form>
 
 				<button class="btn btn-primary mt-2" onclick="ejercicio1()">Enviar</button>
+				<br/>
+				<a href="<?= base_url(); ?>" class="btn btn-primary mt-2">Volver</a>
 			</div>
 
 		</div>

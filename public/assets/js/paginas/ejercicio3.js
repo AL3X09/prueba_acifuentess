@@ -1,10 +1,11 @@
 //creado por Alex CS
 $(document).ready(function () {
-  nuemeros = Math.floor(Math.random() * 100)
-
+  var nuemeros =[]
+  for (i=0;i<=20;i++){
+    nuemeros.push(Math.floor(Math.random() * 100))
+  }
   
   $("#numeros").val(nuemeros)
-  
 });
 
 function ejercicio3() {
@@ -14,14 +15,18 @@ function ejercicio3() {
     method: 'POST',
     data: $("#farreglo").serialize(),
     beforeSend: function () {
+      Swal.fire('Esperando respuesta');
     },
     success: function (data) {
 
-      if (data.status == '200') {
-        $.each(data.data, function (k, v) {
-
-        });
-
+      if (data.status == '201') {
+        //console.log(data);
+        Swal.fire({
+          title: data.messages,
+          icon: 'info',
+          html: data.data,
+        })
+        
       } else {
         Swal.fire(data.messages);
       }

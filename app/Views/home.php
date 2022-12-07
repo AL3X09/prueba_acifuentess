@@ -57,7 +57,7 @@
 						<div class="card-body">
 						<h5 class="card-title">Ejercicio 4</h5>
 							<p class="card-text">
-								Generar dos arreglos A y B con 10 valores aleatoriosde letras del abecedario y mostrar lossiguientes resultados.
+								Generar dos arreglos A y B con 10 valores aleatorios de letras del abecedario y mostrar los siguientes resultados.
 							</p>
 							<a href="Ejer4" class="btn btn-primary">Abrir</a>
 						</div>

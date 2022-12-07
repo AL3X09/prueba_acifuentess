@@ -18,22 +18,24 @@
 					<input type="text" id="columnas" name="columnas" class="form-control" aria-describedby="anioHelpInline" required="true">
 				</form>
 
-				<button class="btn btn-primary mt-2" onclick="ejercicio2()">Enviar</button>
+				<button class="btn btn-primary mt-2" onclick="ejercicio2()">crear tabla</button>
+				<br/>
+				<a href="<?= base_url(); ?>" class="btn btn-primary mt-2">Volver</a>
 			</div>
 
 		</div>
 		<div class="row mt-2">
 
-		<div class="col-md-12">
+			<div class="col-md-12">
 
-			<table id="datadina">
-	
-			</table> 
+				<table id="datadina" class="table-primary">
+
+				</table>
 
 			</div>
 		</div>
 
-		
+
 
 	</div>
 

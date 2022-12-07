@@ -11,6 +11,7 @@ function ejercicio1() {
     method: 'POST',
     data: $("#fbisiesto").serialize(),
     beforeSend: function () {
+      Swal.fire('Esperando respuesta');
     },
     success: function (data) {
 
